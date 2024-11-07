@@ -10,16 +10,17 @@ body {
 
 
 .calcolatrice {
-    background-color: #ffffff;
+    background-color: #737373;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     width: 250px;
+    border: solid black 3px;
 }
 
 
 #schermo {
-    width: 100%;
+    width: 90%;
     padding: 15px;
     font-size: 22px;
     text-align: right;
@@ -29,6 +30,7 @@ body {
     color: #333;
     margin-bottom: 15px;
     outline: none;
+    border: solid black 1px;
 }
 
 
@@ -46,6 +48,7 @@ button {
     border-radius: 8px;
     cursor: pointer;
     color: #fff;
+    border: solid black 1px;
 }
 
 
