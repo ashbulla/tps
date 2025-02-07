@@ -36,9 +36,6 @@
     }
     
     function draw() {
-        if (!result.length) {
-            alert("file mancante")
-        } else {
             let c = document.getElementById("canva");
             var larghezza = c.width;
             var altezza= c.height;
@@ -104,7 +101,6 @@
                 if (dotEnable) {drawPoint(larghezza/15+divisoreX*i, altezza/1.155 - 45*(Number(effData[1].replaceAll('"', '')) / (newMax/nSegmentiY)), ctx) }
             }
             ctx.stroke()
-        }
     }
     
     function drawPoint(x,y,canvas) {
