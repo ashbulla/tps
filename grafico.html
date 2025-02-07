@@ -21,8 +21,6 @@
 
     let nSegmentiY = 10
     
-    let dotEnable = false;
-    
     function readFile(input) {
         let file = input.files[0];
       let reader = new FileReader();
@@ -98,16 +96,8 @@
                 let effData = csv[i].split(",")
                 ctx.lineTo(larghezza/15+divisoreX*i, altezza/1.155 - 45*(Number(effData[1].replaceAll('"', '')) / (newMax/nSegmentiY)))
                 ctx.stroke()
-                if (dotEnable) {drawPoint(larghezza/15+divisoreX*i, altezza/1.155 - 45*(Number(effData[1].replaceAll('"', '')) / (newMax/nSegmentiY)), ctx) }
             }
             ctx.stroke()
-    }
-    
-    function drawPoint(x,y,canvas) {
-        canvas.beginPath();
-        canvas.fillStyle = "red";
-        canvas.arc(x, y, 5, 0, Math.PI*2, true);
-        canvas.fill();
     }
     
     // funzione  che serve per la potenza del 10 del numero
