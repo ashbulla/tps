@@ -1,26 +1,19 @@
 <!DOCTYPE html>
-<html lang="it">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anagrafica</title>
+    <meta charset="UTF-8" />
+    <title>tabella</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
 </head>
-<body onload="aggiornaTabella()">
-    
-    <div class="container">
-        <table id="tabella">
-            <tr>
-                <td>NOME</td>
-                <td>COGNOME</td>
-                <td>INDIRIZZO</td>
-                <td>CITTA</td>
-                <td>EMAIL</td>
-            </tr>     
+<body>
+    <div class="container-fluid">
+        <table id="elenco">
+        <tr id="intestazione"><th id="nascosto">000</th><th><h1>nome</h1></th><th><h1>cognome</h1></th><th><h1>città</h1></th><th><h1>indirizzo</h1></th><th><h1>e-mail</h1></th></tr>
+        <tbody id="tabella"></tbody>
         </table>
-        <a href="./index.html"><input class="button" type="button" value="INDIETRO"></a>
-        <input class="button" type="button" value="CANCELLA" onclick="svuotaTabella()">
+    <input type="button" id="aggiorna"onclick="inserisciDati()" value="aggiorna">
     </div>
 </body>
+<script src="script.js"></script>
 </html>
