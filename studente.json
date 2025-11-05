@@ -1,0 +1,19 @@
+[
+    { "nome": "Massimiliano", "cognome": "Ammirati", "data_di_nascita": "05/06/2007" },
+    { "nome": "Sebastie", "cognome": "Ayala", "data_di_nascita": "10/01/2007" },
+    { "nome": "Valerio", "cognome": "Battaglia", "data_di_nascita": "12/05/2007" },
+    { "nome": "Lucia", "cognome": "Biroli", "data_di_nascita": "03/11/2007" },
+    { "nome": "Federico", "cognome": "Elsi", "data_di_nascita": "19/02/2007" },
+    { "nome": "Andrea", "cognome": "Lucchetti", "data_di_nascita": "27/12/2007" },
+    { "nome": "Edoardo", "cognome": "Mansi", "data_di_nascita": "21/09/2005" },
+    { "nome": "Valerio", "cognome": "Marsano", "data_di_nascita": "06/08/2007" },
+    { "nome": "Riccardo", "cognome": "Marzi", "data_di_nascita": "04/04/2007" },
+    { "nome": "Simone", "cognome": "Mauro", "data_di_nascita": "14/10/2006" },
+    { "nome": "Michele", "cognome": "Narciso", "data_di_nascita": "05/06/2008" },
+    { "nome": "Marco", "cognome": "Paredes", "data_di_nascita": "11/11/2006" },
+    { "nome": "Enrico", "cognome": "Raballo", "data_di_nascita": "07/05/2007" },
+    { "nome": "Angelo", "cognome": "Ronchi", "data_di_nascita": "18/02/2007" },
+    { "nome": "Luca", "cognome": "Sesti", "data_di_nascita": "19/11/2007" },
+    { "nome": "Nicolò", "cognome": "Viscomi", "data_di_nascita": "21/03/2007" },
+    { "nome": "Christian", "cognome": "Vodola", "data_di_nascita": "12/08/2007" }
+]

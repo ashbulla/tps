@@ -1,23 +1,133 @@
 <!DOCTYPE html>
-<html lang="it">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anagrafica</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+<meta charset="UTF-8">
+<title>Anagrafica Classe 5E</title>
+<style>
+table, th, td {
+border: 1px solid #000;
+border-collapse: collapse;
+padding: 6px;
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="input">
-            <h1>Inserisci dati</h1>
-            <input placeholder="Nome" type="text" id="Nome">
-            <input placeholder="Cognome" type="text" id="Cognome">
-            <input placeholder="Indirizzo" type="text" id="Indirizzo">
-            <input placeholder="Città" type="text" id="Città">
-            <input placeholder="Email" type="text" id="Email">
-            <a href="./tabella.html"><input class="button" type="button" value="AGGIUNGI" onclick="stampa()"></a>
-        </div>
-    </div>
+<link rel="stylesheet" href="style.css">
+
+
+
+
+<h1>Elenco Studenti - Classe 5E</h1>
+
+
+<button onclick="caricaDati()">Carica Anagrafica</button>
+<br><br>
+
+
+<label>Filtra per iniziale cognome:</label>
+<input type="text" id="filtro" maxlength="1" oninput="filtraPerIniziale()" placeholder="Es. A">
+<br><br>
+
+
+<button onclick="mostraSoloMaggiorenni()">Visualizza solo maggiorenni</button>
+
+
+<div id="tabella"></div>
+
+
+<script>
+let studenti = [];
+
+
+function caricaDati() {
+let richiesta = new XMLHttpRequest();
+richiesta.open("GET", "studente.json", true);
+richiesta.send();
+
+
+richiesta.onload = function() {
+if (richiesta.status === 200) {
+studenti = JSON.parse(richiesta.responseText);
+mostraTabella(studenti);
+} else {
+document.getElementById("tabella").innerHTML = "<p>Errore nel caricamento dei dati.</p>";
+}
+}
+}
+
+
+function mostraTabella(listaStudenti) {
+if (listaStudenti.length === 0) {
+document.getElementById("tabella").innerHTML = "<p>Nessun risultato trovato.</p>";
+return;
+}
+
+
+let tab = "<table><tr><th>Nome</th><th>Cognome</th><th>Data di nascita</th></tr>";
+
+
+for (let studente of listaStudenti) {
+tab += "<tr><td>" + studente.nome + "</td><td>" + studente.cognome + "</td><td>" + studente.data_di_nascita + "</td></tr>";
+}
+
+
+tab += "</table>";
+
+
+document.getElementById("tabella").innerHTML = tab;
+}
+
+
+function filtraPerIniziale() {
+const iniziale = document.getElementById("filtro").value.toUpperCase();
+
+
+if (iniziale === "") {
+mostraTabella(studenti);
+return;
+}
+
+
+const filtrati = studenti.filter(s => s.cognome.toUpperCase().startsWith(iniziale));
+
+
+mostraTabella(filtrati);
+}
+
+
+function calcolaEta(studente) {
+if (!studente.data_di_nascita) return 0;
+
+
+const parti = studente.data_di_nascita.split("/");
+if (parti.length !== 3) return 0;
+
+
+const dataNascita = new Date(parti[2], parti[1] - 1, parti[0]);
+const oggi = new Date();
+
+
+let eta = oggi.getFullYear() - dataNascita.getFullYear();
+
+
+const meseDiff = oggi.getMonth() - dataNascita.getMonth();
+if (meseDiff < 0 || (meseDiff === 0 && oggi.getDate() < dataNascita.getDate())) {
+eta--;
+}
+
+
+return eta;
+}
+
+
+function mostraSoloMaggiorenni() {
+const maggiorenni = studenti.filter(s => calcolaEta(s) >= 18);
+
+
+mostraTabella(maggiorenni);
+}
+</script>
+
+
 </body>
 </html>
