@@ -1,0 +1,97 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+
+.row {
+    display: flex;
+    gap: 20px;
+}
+
+
+.col-3 {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    height: fit-content;
+}
+
+.col-3 .btn,
+.col-3 .form-select {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+
+.btn {
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.btn:hover {
+    background-color: #084298;
+    transform: scale(1.03);
+}
+
+
+.form-select {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 10px;
+    transition: border-color 0.2s;
+}
+
+.form-select:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 4px rgba(13,110,253,0.25);
+}
+
+.col-9 {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+#message {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #0d6efd;
+}
+
+
+#tabella {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    overflow-x: auto;
+}
+
+#tabella th,
+#tabella td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+#tabella th {
+    background-color: #0d6efd;
+    color: white;
+}
+
+#tabella tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tabella tr:hover {
+    backgrou
