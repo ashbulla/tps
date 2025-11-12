@@ -1,91 +1,132 @@
+let stringa;
+let righe = [];
+let tabella = [];
+let datiNumerici = [];
+let json;
+let dati;
+let stringhe=[];
 
-let studenti = [];
-
-
-function caricaDati() {
-let richiesta = new XMLHttpRequest();
-richiesta.open("GET", "studente.json", true);
-richiesta.send();
-
-
-richiesta.onload = function() {
-if (richiesta.status === 200) {
-studenti = JSON.parse(richiesta.responseText);
-mostraTabella(studenti);
-} else {
-document.getElementById("tabella").innerHTML = "<p>Errore nel caricamento dei dati.</p>";
-}
-}
-}
+window.onload = leggi;
 
 
-function mostraTabella(listaStudenti) {
-if (listaStudenti.length === 0) {
-document.getElementById("tabella").innerHTML = "<p>Nessun risultato trovato.</p>";
-return;
-}
 
+function leggi() {
 
-let tab = "<table><tr><th>Nome</th><th>Cognome</th><th>Data di nascita</th></tr>";
-
-
-for (let studente of listaStudenti) {
-tab += "<tr><td>" + studente.nome + "</td><td>" + studente.cognome + "</td><td>" + studente.data_di_nascita + "</td></tr>";
+    document.querySelector('select[onchange*="cognome"]').selectedIndex = 0;
+    document.querySelector('select[onchange*="nome"]').selectedIndex = 0;
+    
+    const req = new XMLHttpRequest();
+    req.open("GET",'5Einf.json',true);
+    req.send();
+    req.onload = function(){
+    json = JSON.parse(req.responseText);
+    console.log(json);
+    inserisci(json);
+    
 }
 
 
-tab += "</table>";
 
-
-document.getElementById("tabella").innerHTML = tab;
+   
 }
 
+function inserisci(file) {
+    
 
-function filtraPerIniziale() {
-const iniziale = document.getElementById("filtro").value.toUpperCase();
+    let tab = document.getElementById("tabella");
+    tab.innerHTML = "";
+    if(file.length==0){
+        tab.innerHTML = "nessuno studente rispetta il paramentro inserito";
+    }
+    let intestazione = Object.keys(file[0]);
+    let Header = tab.insertRow();
+    for (let chiave of intestazione) {
+        const cella = Header.insertCell();
+        cella.innerHTML = `<b>${chiave}</b>`;
+    }
 
 
-if (iniziale === "") {
-mostraTabella(studenti);
-return;
+    for (let i of file) {
+        const riga = tab.insertRow();
+        for (let chiave of intestazione) {
+            const cella = riga.insertCell();
+            cella.innerHTML = i[chiave];
+        }
+    }
+
+   
+   
 }
 
+function salvaStringhe(parametro, valore) {
+   if (parametro === "nome") {
+        document.querySelector('select[onchange*="cognome"]').selectedIndex = 0;
+    }
 
-const filtrati = studenti.filter(s => s.cognome.toUpperCase().startsWith(iniziale));
+    
+    if (parametro === "cognome") {
+        document.querySelector('select[onchange*="nome"]').selectedIndex = 0;
+    }
+
+        let rispettano = [];
+        stringhe = []; 
+        for (let i of json) {
+            
+            let stringa = i[parametro];  
+            let id = i.elenco;               
+            stringhe.push(stringa + "," + id);
+        }
+
+       
+        for (let t of stringhe) {
+            
+            if (t.startsWith(valore)) {
+                
+                let splittato = t.split(",");
+                let ids = splittato[1];
+
+                for (let i of json) {
+                    
+                    if (String(i.elenco) === String(ids)) {
+                        rispettano.push(i);
+                    }
+                }
+            }
+        }
+
+        
+        inserisci(rispettano);
+    }
 
 
-mostraTabella(filtrati);
+function minorenni(){
+    document.querySelector('select[onchange*="cognome"]').selectedIndex = 0;
+    document.querySelector('select[onchange*="nome"]').selectedIndex = 0;
+            console.log(json);
+            let età=[];
+            for(let i of json){
+                if(i.età<18){
+                    età.push(i);
+                }
+            }
+            inserisci(età)
+            
+        
+
 }
+function maggiorenni(){
+    document.querySelector('select[onchange*="cognome"]').selectedIndex = 0;
+    document.querySelector('select[onchange*="nome"]').selectedIndex = 0;
+            console.log(json);
+            let età=[];
+            for(let i of json){
+                if(i.età>=18){
+                    età.push(i);
+                }
+            }
+            inserisci(età)
+            
+        
 
 
-function calcolaEta(studente) {
-if (!studente.data_di_nascita) return 0;
-
-
-const parti = studente.data_di_nascita.split("/");
-if (parti.length !== 3) return 0;
-
-
-const dataNascita = new Date(parti[2], parti[1] - 1, parti[0]);
-const oggi = new Date();
-
-
-let eta = oggi.getFullYear() - dataNascita.getFullYear();
-
-
-const meseDiff = oggi.getMonth() - dataNascita.getMonth();
-if (meseDiff < 0 || (meseDiff === 0 && oggi.getDate() < dataNascita.getDate())) {
-eta--;
-}
-
-
-return eta;
-}
-
-
-function mostraSoloMaggiorenni() {
-const maggiorenni = studenti.filter(s => calcolaEta(s) >= 18);
-
-
-mostraTabella(maggiorenni);
 }
