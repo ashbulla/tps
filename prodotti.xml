@@ -1,12 +1,13 @@
 <prodotti>
     <prodotto>
-        <marca>Apple</marca>
-        <nome>MacBook Air</nome>
-        <prezzo>1499</prezzo>
+        <marca>Louis Vuitton</marca>
+        <nome>LV Trainer</nome>
+        <prezzo>950</prezzo>
     </prodotto>
     <prodotto>
-        <marca>Samsung</marca>
-        <nome>Galaxy Tab</nome>
-        <prezzo>599</prezzo>
+        <marca>Louis Vuitton</marca>
+        <nome>LV Skate</nome>
+        <prezzo>1199</prezzo>
     </prodotto>
+
 </prodotti>
