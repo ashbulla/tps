@@ -1,5 +1,6 @@
 [
-    { "marca": "Apple", "nome": "iPhone 15", "prezzo": 1299 },
-    { "marca": "Apple", "nome": "iPad Pro", "prezzo": 999 },
-    { "marca": "Samsung", "nome": "Galaxy S24", "prezzo": 1099 }
+    { "marca": "Nike", "nome": "air max 95", "prezzo": 195 },
+    { "marca": "Adidas", "nome": "campus", "prezzo": 130 },
+    { "marca": "Alexander McQeen", "nome": "Galaxy S24", "prezzo": 500 }
+
 ]
