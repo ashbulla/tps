@@ -34,7 +34,7 @@ select {
     font-size: 16px;
     border-radius: 8px;
     border: 2px solid #b30000;
-    background-color: white;
+    background-color: rgb(143, 255, 199);
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -139,4 +139,5 @@ button:hover {
 }
 
 }
+
 
