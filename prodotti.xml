@@ -1,0 +1,12 @@
+<prodotti>
+    <prodotto>
+        <marca>Apple</marca>
+        <nome>MacBook Air</nome>
+        <prezzo>1499</prezzo>
+    </prodotto>
+    <prodotto>
+        <marca>Samsung</marca>
+        <nome>Galaxy Tab</nome>
+        <prezzo>599</prezzo>
+    </prodotto>
+</prodotti>

@@ -1,0 +1,5 @@
+[
+    { "marca": "Apple", "nome": "iPhone 15", "prezzo": 1299 },
+    { "marca": "Apple", "nome": "iPad Pro", "prezzo": 999 },
+    { "marca": "Samsung", "nome": "Galaxy S24", "prezzo": 1099 }
+]
