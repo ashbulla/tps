@@ -1,159 +1,142 @@
-/* ======== FONT GOOGLE ======== */
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');  /* Aggiunta una font alternativa */
+/* ===== FONT ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* ======== STILE GENERALE ======== */
+/* ===== RESET BASE ===== */
+* {
+    box-sizing: border-box;
+}
+
+/* ===== STILE GENERALE ===== */
 body {
-    font-family: 'Pacifico', cursive, 'Roboto', sans-serif;  /* Alternanza tra Pacifico e Roboto */
-    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f5f5f5, #eaeaea);
     margin: 0;
     padding: 0;
-    text-align: center;  /* centra tutto */
-    line-height: 1.6;  /* Maggiore spazio tra le righe per migliorare la leggibilità */
+    text-align: center;
+    color: #333;
 }
 
-/* ======== TITOLO ======== */
+/* ===== TITOLO ===== */
 h2 {
-    background-color: #00d9ff; /* Rosso MediaWorld */
+    background-color: #b30000;
     color: white;
-    padding: 20px;
+    padding: 25px;
     margin: 0;
-    border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-    font-size: 36px;
-    letter-spacing: 1px;  /* Spaziatura tra le lettere per un effetto più elegante */
-    text-transform: uppercase; /* Trasformazione in maiuscolo */
+    font-size: 34px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* ======== SELECT BOX ======== */
+/* ===== SELECT ===== */
 select {
+    margin: 20px 10px;
     padding: 12px 18px;
-    margin: 20px;
-    border: 2px solid #00ffd5;
-    border-radius: 8px;
-    background: white;
-    cursor: pointer;
     font-size: 16px;
-    transition: all 0.4s ease;  /* Transizione più fluida */
-    font-family: 'Roboto', sans-serif;  /* Usa un font alternativo per il testo */
+    border-radius: 8px;
+    border: 2px solid #b30000;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Effetto hover select */
 select:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* ======== CONTENITORE PRODOTTI ======== */
-#prodotti {
-    width: 85%;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-/* Ogni prodotto */
-#prodotti div {
-    background: white;
-    border-left: 8px solid #000c7a;
-    padding: 18px;
-    margin: 10px 0;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Animazione hover sui prodotti */
-#prodotti div:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    filter: brightness(1.05);
-}
-
-/* Nome prodotto */
-#prodotti b {
-    color: #00fff2;
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-/* ======== BOTTONI ======== */
-button {
-    background-color: #00ffc8;
-    color: white;
-    border: none;
-    padding: 12px 22px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-left: 12px;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    transition: all 0.3s ease;  /* animazione */
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* Hover sui bottoni */
-button:hover {
-    background-color: #00ffff;
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-    filter: brightness(1.1);
-}
-
-/* Pulsante PDF */
-#pdf {
-    display: inline-block;
-    margin: 25px auto;
-    font-size: 18px;
-    width: 200px;
-    padding: 12px;
-    background-color: #333;
-    color: white;
-    border-radius: 6px;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-/* Hover pulsante PDF */
-#pdf:hover {
-    background-color: #444;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-}
-
-/* Linea divisoria */
+/* ===== LINEA ===== */
 hr {
-    width: 90%;
+    width: 85%;
+    border: none;
+    border-top: 2px solid #b30000;
     margin: 25px auto;
-    border: 0;
-    border-top: 2px solid #00fff2;
-    opacity: 0.5;  /* Linea più sottile */
 }
 
-/* ======== MEDIA QUERIES (mobile responsive) ======== */
+/* ===== CONTENITORE PRODOTTI ===== */
+#prodotti {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ===== SINGOLO PRODOTTO ===== */
+#prodotti div {
+    background-color: white;
+    padding: 18px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    border-left: 6px solid #b30000;
+    transition: all 0.3s ease;
+}
+
+#prodotti div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+/* ===== NOME PRODOTTO ===== */
+#prodotti b {
+    font-size: 18px;
+    color: #b30000;
+}
+
+/* ===== BOTTONI ===== */
+button {
+    background-color: #b30000;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #800000;
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* ===== BOTTONE PDF ===== */
+#pdf {
+    margin: 30px auto;
+    padding: 14px 25px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: #222;
+    display: block;
+}
+
+#pdf:hover {
+    background-color: #000;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     #prodotti {
         width: 95%;
     }
 
-    button {
-        padding: 10px 18px;
-        font-size: 14px;
+    #prodotti div {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
     }
 
-    #pdf {
-        width: 150px;
-        font-size: 16px;
+    select {
+        width: 80%;
     }
 
     h2 {
-        font-size: 28px;
-        padding: 15px;
+        font-size: 26px;
     }
 }
+
+}
+
