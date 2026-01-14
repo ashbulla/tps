@@ -14,7 +14,7 @@ body {
 
 /* ======== TITOLO ======== */
 h2 {
-    background-color: #e60000; /* Rosso MediaWorld */
+    background-color: #00d9ff; /* Rosso MediaWorld */
     color: white;
     padding: 20px;
     margin: 0;
@@ -29,7 +29,7 @@ h2 {
 select {
     padding: 12px 18px;
     margin: 20px;
-    border: 2px solid #e60000;
+    border: 2px solid #00ffd5;
     border-radius: 8px;
     background: white;
     cursor: pointer;
@@ -56,7 +56,7 @@ select:hover {
 /* Ogni prodotto */
 #prodotti div {
     background: white;
-    border-left: 8px solid #e60000;
+    border-left: 8px solid #000c7a;
     padding: 18px;
     margin: 10px 0;
     border-radius: 12px;
@@ -76,7 +76,7 @@ select:hover {
 
 /* Nome prodotto */
 #prodotti b {
-    color: #e60000;
+    color: #00fff2;
     font-size: 22px;
     font-weight: 500;
     margin-bottom: 10px;
@@ -84,7 +84,7 @@ select:hover {
 
 /* ======== BOTTONI ======== */
 button {
-    background-color: #e60000;
+    background-color: #00ffc8;
     color: white;
     border: none;
     padding: 12px 22px;
@@ -99,7 +99,7 @@ button {
 
 /* Hover sui bottoni */
 button:hover {
-    background-color: #b30000;
+    background-color: #00ffff;
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     filter: brightness(1.1);
@@ -132,7 +132,7 @@ hr {
     width: 90%;
     margin: 25px auto;
     border: 0;
-    border-top: 2px solid #e60000;
+    border-top: 2px solid #00fff2;
     opacity: 0.5;  /* Linea più sottile */
 }
 
