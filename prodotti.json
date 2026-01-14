@@ -1,6 +1,7 @@
 [
     { "marca": "Nike", "nome": "air max 95", "prezzo": 195 },
-    { "marca": "Adidas", "nome": "campus", "prezzo": 130 },
-    { "marca": "Alexander McQeen", "nome": "Galaxy S24", "prezzo": 500 }
+    { "marca": "Adidas", "nome": "Adidas Campus", "prezzo": 130 },
+    { "marca": "Alexander McQeen", "nome": "Alexander McQeen", "prezzo": 500 }
 
 ]
+
