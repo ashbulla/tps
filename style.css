@@ -5,7 +5,7 @@
 /* ======== STILE GENERALE ======== */
 body {
     font-family: 'Pacifico', cursive, 'Roboto', sans-serif;  /* Alternanza tra Pacifico e Roboto */
-    background-color: rgba(124, 190, 245, 0.15);
+    background-color: rgba(98, 178, 243, 0.15);
     margin: 0;
     padding: 0;
     text-align: center;  /* centra tutto */
@@ -157,5 +157,6 @@ hr {
         padding: 15px;
     }
 }
+
 
 
